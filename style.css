@@ -1,38 +1,76 @@
+/* ==========================================================================
+   RESET
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
 :root {
+  --negro: #0b0b0a;
   --verde-bosque: #1e3a2b;
-  --verde-pino: #2f5d46;
-  --verde-salvia: #7d9a6e;
-  --crema: #f7f0e3;
-  --arena: #e8d5b5;
-  --arena-oscuro: #efe2c8;
-  --ocre: #d9a23f;
-  --terracota: #c2612e;
-  --marron-tostado: #2e2219;
-  --marron-suave: #5a4636;
+  --crema: #f3e9d7;
+  --terracota: #d4703a;
+  --gris-arena: #9c917f;
+
+  --font-base: "Inter", sans-serif;
+  --font-logo: "Fraunces", serif;
 }
 
+/* ==========================================================================
+   BASE
+   ========================================================================== */
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--crema);
 
   min-height: 100vh;
 
-  /* margin: 20px; */
-  /* align-items: center; */
+  background-color: var(--negro);
+  font-family: var(--font-base);
+  /* animation: fadeIn 0.5s ease; */
 }
 
+/* ==========================================================================
+   TIPOGRAFÍA
+   ========================================================================== */
+section > h4 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: var(--crema);
+  font-size: 25px;
+
+  /* border: 1px solid red; */
+}
+
+h5 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: var(--terracota);
+}
+
+h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+span {
+  color: var(--terracota);
+  font-size: 25px;
+}
+
+/* ==========================================================================
+   LAYOUT: HEADER / SECTION / FOOTER
+   ========================================================================== */
 header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
   align-self: center;
 
   position: sticky;
@@ -42,13 +80,13 @@ header {
   margin: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 15px;
-  border: 1px solid #ccc;
-  background-color: #1e3a2b;
-  color: var(--crema);
-  border-radius: 10px;
 
-  width: 85%;
+  background-color: var(--negro);
+  color: var(--crema);
+  border-bottom: 1px solid var(--verde-bosque);
+  width: 100%;
+
+  animation: fadeIn 0.5s ease;
 }
 
 section {
@@ -57,35 +95,57 @@ section {
   justify-content: start;
   align-items: start;
 
-  color: var(--marron-tostado);
-
-  border: 1px solid #ccc;
+  color: var(--crema);
+  border-radius: 10px;
   margin: 20px;
   padding: 15px;
 
-  /* border: 1px solid red; */
-}
-
-section > h4 {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  color: var(--terracota);
-  font-size: 20px;
-
-  /* border: 1px solid red; */
-}
-
-header > h3 {
-  font-size: 15px;
+  animation: fadeIn 0.6s ease 0.1s backwards;
 }
 
 footer {
   display: flex;
-  /* justify-self: end; */
+  flex-direction: column;
+  justify-content: baseline;
   align-self: start;
-  margin: 20px;
-  color: var(--marron-tostado);
+  color: var(--crema);
+  background-color: var(--verde-bosque);
   margin-top: auto;
+  font-size: 15px;
+  width: 100%;
+  padding: 24px 20px;
+  margin: 0;
+  margin-top: auto;
+
+  animation: fadeIn 0.6s ease 0.2s backwards;
+}
+
+/* ==========================================================================
+   LOGO / NAVEGACIÓN
+   ========================================================================== */
+.logo {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  padding-top: 10px;
+
+  /* border: 1px solid red; */
+}
+
+.logo a {
+  font-family: var(--font-logo);
+  letter-spacing: -1px;
+  font-size: 28px;
+  text-decoration: none;
+  color: var(--crema);
+
+  /* border: 1px solid red; */
+}
+
+.logo span {
+  color: var(--terracota);
+  font-size: 30px;
 
   /* border: 1px solid red; */
 }
@@ -93,24 +153,48 @@ footer {
 /* Futuros enlaces a diferentes sitios de la web */
 .nav_links {
   display: flex;
+  /* overflow-x: auto; */
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
-
-  margin: 10px;
+  width: 100%;
+  text-decoration: none;
+  /* width: 50%; */
   gap: 10px;
-
+  margin-top: 10px;
   /* border: 1px solid red; */
 }
 
-.nav_links > div {
-  color: var;
+.nav_links > a {
+  color: var(--crema);
+  text-decoration: none;
+  margin-bottom: 8px;
 }
 
-.nav_links > div:hover {
-  color: var(--ocre);
+.nav_links > a:hover {
+  color: var(--terracota);
 }
 
+.contacto {
+  display: flex;
+  justify-self: end;
+  background-color: var(--terracota);
+  color: var(--crema);
+  padding: 7px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav_links > a.contacto:hover {
+  background-color: var(--crema);
+  color: var(--terracota);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   STACK DE TECNOLOGÍAS
+   ========================================================================== */
 .stack {
   display: flex;
   flex-direction: row;
@@ -119,7 +203,6 @@ footer {
   width: 100%;
   flex-wrap: wrap;
   gap: 20px;
-  /* border: 1px solid red; */
 }
 
 .tarjeta_stack {
@@ -132,8 +215,9 @@ footer {
   align-items: center;
 
   border-radius: 10px;
-  border: 2px solid var(--terracota);
-  background-color: var(--arena-oscuro);
+  border: 2px solid var(--crema);
+
+  background-color: var(--terracota);
 }
 
 .tarjeta_stack > div {
@@ -143,7 +227,7 @@ footer {
   text-align: center;
   padding: 8px;
   padding-top: 1px;
-  background-color: var(--arena-oscuro);
+  background-color: var(--verde-bosque);
 }
 
 .tarjeta_stack > i {
@@ -156,10 +240,13 @@ footer {
   font-size: 60px;
   padding: 8px;
 
-  color: var(--marron-suave);
+  color: var(--crema);
   margin-top: 5px;
 }
 
+/* ==========================================================================
+   TARJETAS DE PROYECTOS
+   ========================================================================== */
 .proy_tarjetas {
   display: flex;
   flex-direction: row;
@@ -179,9 +266,12 @@ footer {
 
   border-radius: 10px;
   border: 2px solid var(--terracota);
+
+  /* background-color: var(--arena-oscuro); */
 }
 
 .proy > svg {
+  /* display: flex; */
   width: 100%;
   background-color: var(--arena-oscuro);
   border-top-left-radius: 10px;
@@ -189,12 +279,189 @@ footer {
 }
 
 .proy > div {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
   padding: 10px;
+
   width: 100%;
 
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
 
   color: var(--arena);
   background-color: var(--verde-pino);
+}
+
+/* ==========================================================================
+   SECCIÓN DE CONTACTO
+   ========================================================================== */
+.contacto_sec {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  color: var(--terracota);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.intro {
+  color: var(--gris-arena);
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   FORMULARIO
+   ========================================================================== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.campo label {
+  font-size: 13px;
+  color: var(--gris-arena);
+  margin-bottom: 6px;
+}
+
+.campo input,
+.campo textarea {
+  background-color: var(--negro);
+  border: 1px solid var(--verde-bosque);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--crema);
+  font-family: var(--font-base);
+  font-size: 14px;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--terracota);
+}
+
+form button[type="submit"] {
+  background-color: var(--terracota);
+  color: var(--negro);
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--crema);
+}
+
+/* ==========================================================================
+   ADDRESS
+   ========================================================================== */
+address {
+  margin-top: 50px;
+  margin-bottom: 35px;
+  padding-top: 200px;
+  border-top: 1px solid var(--verde-bosque);
+  font-style: normal;
+  font-size: 18px;
+  color: var(--crema);
+
+  width: 100%;
+}
+
+address a {
+  color: var(--terracota);
+  text-decoration: none;
+}
+
+address {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--verde-bosque);
+  font-style: normal;
+  font-size: 15px;
+  color: var(--crema);
+}
+
+address a {
+  color: var(--terracota);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   UTILIDADES (líneas separadoras, copyright)
+   ========================================================================== */
+.linea {
+  width: 100%;
+  max-width: 300px;
+  border-top: 1px solid var(--gris-arena);
+  margin: 16px 0 12px;
+}
+
+.copyright {
+  color: var(--gris-arena);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+/* Estilos desde 1024px en adelante (escritorio y laptop) */
+
+@media (min-width: 1024px) {
+  header,
+  section {
+    max-width: 900px;
+    margin: 20px auto;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav_links {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .proy_tarjetas,
+  .stack {
+    gap: 30px;
+  }
+
+  form {
+    max-width: 500px;
+  }
+
+  section > h4 {
+    font-size: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
